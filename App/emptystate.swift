@@ -18,7 +18,7 @@ struct EmptyState: View {
 
                 VStack(spacing: 0) {
 
-                    // Header copied from MainPage (same styles and actions)
+                    //Header copied from MainPage (same styles and actions)
                     HStack(alignment: .firstTextBaseline) {
                         Text("Journal")
                             .font(.largeTitle.bold())
@@ -111,7 +111,7 @@ struct EmptyState: View {
                     .padding(.bottom, 16)
                 }
 
-                // Sort popover (same look/behavior as MainPage)
+                //Sort popover (same look/behavior as MainPage)
                 if showSortPopover {
                     VStack(alignment: .leading, spacing: 0) {
                         Button {
