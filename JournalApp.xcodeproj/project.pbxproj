@@ -30,9 +30,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		47A5DB662EA60BA600DB3F68 /* JournalApp */ = {
+		47A5DB662EA60BA600DB3F68 /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = JournalApp;
+			path = App;
 			sourceTree = "<group>";
 		};
 		47A5DB742EA60BA600DB3F68 /* JournalAppTests */ = {
@@ -43,6 +43,16 @@
 		47A5DB7E2EA60BA600DB3F68 /* JournalAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = JournalAppUITests;
+			sourceTree = "<group>";
+		};
+		47A5DBDA2EA76AD900DB3F68 /* viewmodels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		47A5DBDC2EA76AF000DB3F68 /* model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,10 +85,12 @@
 		47A5DB5B2EA60BA600DB3F68 = {
 			isa = PBXGroup;
 			children = (
-				47A5DB662EA60BA600DB3F68 /* JournalApp */,
+				47A5DB662EA60BA600DB3F68 /* App */,
 				47A5DB742EA60BA600DB3F68 /* JournalAppTests */,
 				47A5DB7E2EA60BA600DB3F68 /* JournalAppUITests */,
 				47A5DB652EA60BA600DB3F68 /* Products */,
+				47A5DBDA2EA76AD900DB3F68 /* viewmodels */,
+				47A5DBDC2EA76AF000DB3F68 /* model */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +120,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				47A5DB662EA60BA600DB3F68 /* JournalApp */,
+				47A5DB662EA60BA600DB3F68 /* App */,
+				47A5DBDA2EA76AD900DB3F68 /* viewmodels */,
+				47A5DBDC2EA76AF000DB3F68 /* model */,
 			);
 			name = JournalApp;
 			packageProductDependencies = (
