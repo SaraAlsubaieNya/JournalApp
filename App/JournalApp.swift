@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-
 @main
 struct JournalAppApp: App {
     var body: some Scene {
         WindowGroup {
-            MainPage()
+            SplashScreen()
         }
     }
 }
+
