@@ -1,17 +1,13 @@
-//
-//  JournalAppApp.swift
-//  JournalApp
-//
-//  Created by Sara Alsubaie on 28/04/1447 AH.
-//
-
 import SwiftUI
+
 @main
 struct JournalAppApp: App {
+    @StateObject private var store = JournalStore()
+
     var body: some Scene {
         WindowGroup {
             SplashScreen()
+                .environmentObject(store)
         }
     }
 }
-
