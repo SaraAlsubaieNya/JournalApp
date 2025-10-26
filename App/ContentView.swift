@@ -40,7 +40,7 @@ struct SplashScreen: View {
     }
 }
 
-// Decides EmptyState vs MainPage based on store
+//Decides EmptyState vs MainPage based on store
 private struct RootRouter: View {
     @EnvironmentObject private var store: JournalStore
 

@@ -1,12 +1,26 @@
 import SwiftUI
 
 struct MainPage: View {
-    @SwiftUI.EnvironmentObject private var store: JournalStore
+    @EnvironmentObject private var store: JournalStore
 
     @State private var showSortPopover = false
     @State private var sheetMode: EditorPresentation? = nil
     @State private var pendingDelete: JournalEntry? = nil
     @State private var showDeleteDialog = false
+    @State private var searchText = ""
+    @FocusState private var isSearchFocused: Bool
+
+    // Filtered entries based on search text
+    var filteredEntries: [JournalEntry] {
+        if searchText.isEmpty {
+            return store.entries
+        } else {
+            return store.entries.filter { entry in
+                entry.title.localizedCaseInsensitiveContains(searchText) ||
+                entry.body.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
 
     var body: some View {
         NavigationStack {
@@ -23,11 +37,23 @@ struct MainPage: View {
                         Spacer()
 
                         HStack(spacing: 16) {
-                            Button { withAnimation(.spring(response: 0.25, dampingFraction: 0.9)) { showSortPopover.toggle() } } label: {
-                                Image("Sort").renderingMode(.original).resizable().scaledToFit().frame(width: 20, height: 20)
+                            Button {
+                                withAnimation(.spring(response: 0.25, dampingFraction: 0.9)) {
+                                    showSortPopover.toggle()
+                                }
+                            } label: {
+                                Image("Sort")
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
                             }
                             Button { sheetMode = .new } label: {
-                                Image("add").renderingMode(.original).resizable().scaledToFit().frame(width: 20, height: 20)
+                                Image("add")
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
                             }
                         }
                         .font(.title3.weight(.semibold))
@@ -45,38 +71,64 @@ struct MainPage: View {
 
                     Spacer(minLength: 24)
 
-                    // List of cards
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack(spacing: 20) {
-                            ForEach(store.entries) { entry in
-                                Button { sheetMode = .edit(entry) } label: {
-                                    JournalCard(entry: entry)
-                                        .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
-                                }
-                                .buttonStyle(.plain)
-                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                    Button {
-                                        pendingDelete = entry
-                                        showDeleteDialog = true
-                                    } label: {
-                                        Image("trash").resizable().scaledToFit().frame(width: 22, height: 22)
-                                            .padding(14)
-                                            .background(Circle().fill(Color.red))
+                    // List of cards - Using List instead of ScrollView for swipe actions
+                    List {
+                        ForEach(filteredEntries) { entry in
+                            Button {
+                                sheetMode = .edit(entry)
+                            } label: {
+                                JournalCard(
+                                    entry: entry,
+                                    onBookmarkTap: {
+                                        withAnimation(.spring(response: 0.25, dampingFraction: 0.9)) {
+                                            store.toggleBookmark(id: entry.id)
+                                        }
                                     }
-                                    .tint(.clear)
+                                )
+                            }
+                            .buttonStyle(.plain)
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button(role: .destructive) {
+                                    pendingDelete = entry
+                                    showDeleteDialog = true
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
                                 }
                             }
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
                     }
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
 
-                    // Search bar
+                    // Search bar - Now functional
                     HStack(spacing: 12) {
-                        Image("search").foregroundStyle(.secondary)
-                        Text("Search").foregroundStyle(.secondary)
-                        Spacer()
-                        Image("mic").foregroundStyle(.secondary)
+                        Image("search")
+                            .foregroundStyle(.secondary)
+                        
+                        TextField("Search", text: $searchText)
+                            .foregroundStyle(.white)
+                            .focused($isSearchFocused)
+                            .autocorrectionDisabled()
+                        
+                        if !searchText.isEmpty {
+                            Button {
+                                searchText = ""
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        
+                        Button {
+                            // Voice search action - you can implement this later
+                        } label: {
+                            Image("mic")
+                                .foregroundStyle(.secondary)
+                        }
                     }
                     .padding(.horizontal, 16)
                     .frame(height: 52)
@@ -97,18 +149,29 @@ struct MainPage: View {
                                 store.sortByBookmark()
                             }
                         } label: {
-                            HStack { Text("Sort by Bookmark"); Spacer() }
-                                .padding(.vertical, 14).padding(.horizontal, 16)
+                            HStack {
+                                Text("Sort by Bookmark")
+                                Spacer()
+                            }
+                            .padding(.vertical, 14)
+                            .padding(.horizontal, 16)
                         }
-                        Divider().background(Color.white.opacity(0.15))
+                        
+                        Divider()
+                            .background(Color.white.opacity(0.15))
+                        
                         Button {
                             withAnimation(.spring(response: 0.25, dampingFraction: 0.9)) {
                                 showSortPopover = false
                                 store.sortByDateDescending()
                             }
                         } label: {
-                            HStack { Text("Sort by Entry Date"); Spacer() }
-                                .padding(.vertical, 14).padding(.horizontal, 16)
+                            HStack {
+                                Text("Sort by Entry Date")
+                                Spacer()
+                            }
+                            .padding(.vertical, 14)
+                            .padding(.horizontal, 16)
                         }
                     }
                     .font(.body)
@@ -148,7 +211,9 @@ struct MainPage: View {
                     }
                     pendingDelete = nil
                 }
-                Button("Cancel", role: .cancel) { pendingDelete = nil }
+                Button("Cancel", role: .cancel) {
+                    pendingDelete = nil
+                }
             } message: {
                 Text("Are you sure you want to delete this journal?")
             }
@@ -159,6 +224,7 @@ struct MainPage: View {
 // Card UI
 private struct JournalCard: View {
     let entry: JournalEntry
+    let onBookmarkTap: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -171,9 +237,16 @@ private struct JournalCard: View {
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
                 }
+                
                 Spacer()
-                Image(entry.isBookmarked ? "bookmark" : "nonbookmark")
-                    .renderingMode(.original)
+                
+                Button {
+                    onBookmarkTap()
+                } label: {
+                    Image(entry.isBookmarked ? "bookmark" : "nonbookmark")
+                        .renderingMode(.original)
+                }
+                .buttonStyle(.plain)
             }
 
             Text(entry.body)
