@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,24 +65,18 @@
 /* Begin PBXFrameworksBuildPhase section */
 		47A5DB612EA60BA600DB3F68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		47A5DB6E2EA60BA600DB3F68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		47A5DB782EA60BA600DB3F68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -150,14 +144,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				47A5DB662EA60BA600DB3F68 /* App */,
 			);
 			name = JournalApp;
-			packageProductDependencies = (
-			);
 			productName = JournalApp;
 			productReference = 47A5DB642EA60BA600DB3F68 /* JournalApp.app */;
 			productType = "com.apple.product-type.application";
@@ -179,8 +169,6 @@
 				47A5DB742EA60BA600DB3F68 /* JournalAppTests */,
 			);
 			name = JournalAppTests;
-			packageProductDependencies = (
-			);
 			productName = JournalAppTests;
 			productReference = 47A5DB712EA60BA600DB3F68 /* JournalAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -202,8 +190,6 @@
 				47A5DB7E2EA60BA600DB3F68 /* JournalAppUITests */,
 			);
 			name = JournalAppUITests;
-			packageProductDependencies = (
-			);
 			productName = JournalAppUITests;
 			productReference = 47A5DB7B2EA60BA600DB3F68 /* JournalAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -240,7 +226,7 @@
 			);
 			mainGroup = 47A5DB5B2EA60BA600DB3F68;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 47A5DB652EA60BA600DB3F68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,31 +241,24 @@
 /* Begin PBXResourcesBuildPhase section */
 		47A5DB622EA60BA600DB3F68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		47A5DB6F2EA60BA600DB3F68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		47A5DB792EA60BA600DB3F68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47A5DB602EA60BA600DB3F68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4742886B2EAF5D1A000940A5 /* JournalEditorSheet.swift in Sources */,
 				474288672EAF5CBB000940A5 /* JournalStore.swift in Sources */,
@@ -288,21 +267,16 @@
 				476444342EAF5F9D001483F0 /* JournalEntry.swift in Sources */,
 				474288682EAF5CC4000940A5 /* ContentView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		47A5DB6D2EA60BA600DB3F68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		47A5DB772EA60BA600DB3F68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -320,7 +294,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		47A5DB832EA60BA600DB3F68 /* Debug */ = {
+		47A5DB832EA60BA600DB3F68 /* Debug configuration for PBXProject "JournalApp" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -384,7 +358,7 @@
 			};
 			name = Debug;
 		};
-		47A5DB842EA60BA600DB3F68 /* Release */ = {
+		47A5DB842EA60BA600DB3F68 /* Release configuration for PBXProject "JournalApp" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -441,14 +415,15 @@
 			};
 			name = Release;
 		};
-		47A5DB862EA60BA600DB3F68 /* Debug */ = {
+		47A5DB862EA60BA600DB3F68 /* Debug configuration for PBXNativeTarget "JournalApp" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B46HX4NMBJ;
+				DEVELOPMENT_TEAM = YNBJ56FGKA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -461,8 +436,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sara.JournalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saralsubaienya.JournalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -473,14 +449,15 @@
 			};
 			name = Debug;
 		};
-		47A5DB872EA60BA600DB3F68 /* Release */ = {
+		47A5DB872EA60BA600DB3F68 /* Release configuration for PBXNativeTarget "JournalApp" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B46HX4NMBJ;
+				DEVELOPMENT_TEAM = YNBJ56FGKA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -493,8 +470,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sara.JournalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saralsubaienya.JournalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -505,7 +483,7 @@
 			};
 			name = Release;
 		};
-		47A5DB892EA60BA600DB3F68 /* Debug */ = {
+		47A5DB892EA60BA600DB3F68 /* Debug configuration for PBXNativeTarget "JournalAppTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,7 +505,7 @@
 			};
 			name = Debug;
 		};
-		47A5DB8A2EA60BA600DB3F68 /* Release */ = {
+		47A5DB8A2EA60BA600DB3F68 /* Release configuration for PBXNativeTarget "JournalAppTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -549,7 +527,7 @@
 			};
 			name = Release;
 		};
-		47A5DB8C2EA60BA600DB3F68 /* Debug */ = {
+		47A5DB8C2EA60BA600DB3F68 /* Debug configuration for PBXNativeTarget "JournalAppUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -569,7 +547,7 @@
 			};
 			name = Debug;
 		};
-		47A5DB8D2EA60BA600DB3F68 /* Release */ = {
+		47A5DB8D2EA60BA600DB3F68 /* Release configuration for PBXNativeTarget "JournalAppUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -595,37 +573,33 @@
 		47A5DB5F2EA60BA600DB3F68 /* Build configuration list for PBXProject "JournalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47A5DB832EA60BA600DB3F68 /* Debug */,
-				47A5DB842EA60BA600DB3F68 /* Release */,
+				47A5DB832EA60BA600DB3F68 /* Debug configuration for PBXProject "JournalApp" */,
+				47A5DB842EA60BA600DB3F68 /* Release configuration for PBXProject "JournalApp" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		47A5DB852EA60BA600DB3F68 /* Build configuration list for PBXNativeTarget "JournalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47A5DB862EA60BA600DB3F68 /* Debug */,
-				47A5DB872EA60BA600DB3F68 /* Release */,
+				47A5DB862EA60BA600DB3F68 /* Debug configuration for PBXNativeTarget "JournalApp" */,
+				47A5DB872EA60BA600DB3F68 /* Release configuration for PBXNativeTarget "JournalApp" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		47A5DB882EA60BA600DB3F68 /* Build configuration list for PBXNativeTarget "JournalAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47A5DB892EA60BA600DB3F68 /* Debug */,
-				47A5DB8A2EA60BA600DB3F68 /* Release */,
+				47A5DB892EA60BA600DB3F68 /* Debug configuration for PBXNativeTarget "JournalAppTests" */,
+				47A5DB8A2EA60BA600DB3F68 /* Release configuration for PBXNativeTarget "JournalAppTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		47A5DB8B2EA60BA600DB3F68 /* Build configuration list for PBXNativeTarget "JournalAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47A5DB8C2EA60BA600DB3F68 /* Debug */,
-				47A5DB8D2EA60BA600DB3F68 /* Release */,
+				47A5DB8C2EA60BA600DB3F68 /* Debug configuration for PBXNativeTarget "JournalAppUITests" */,
+				47A5DB8D2EA60BA600DB3F68 /* Release configuration for PBXNativeTarget "JournalAppUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
