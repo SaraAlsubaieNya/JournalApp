@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		474288672EAF5CBB000940A5 /* JournalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474288622EAF5C08000940A5 /* JournalStore.swift */; };
+		474288682EAF5CC4000940A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474288632EAF5C21000940A5 /* ContentView.swift */; };
+		474288692EAF5D10000940A5 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474288642EAF5C31000940A5 /* EmptyStateView.swift */; };
+		4742886A2EAF5D15000940A5 /* mainpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474288652EAF5C3F000940A5 /* mainpage.swift */; };
+		4742886B2EAF5D1A000940A5 /* JournalEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474288662EAF5C4D000940A5 /* JournalEditorSheet.swift */; };
+		476444342EAF5F9D001483F0 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474288612EAF5BF5000940A5 /* JournalEntry.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		47A5DB722EA60BA600DB3F68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		474288612EAF5BF5000940A5 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalEntry.swift; path = model/JournalEntry.swift; sourceTree = SOURCE_ROOT; };
+		474288622EAF5C08000940A5 /* JournalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalStore.swift; path = viewmodel/JournalStore.swift; sourceTree = SOURCE_ROOT; };
+		474288632EAF5C21000940A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = views/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		474288642EAF5C31000940A5 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyStateView.swift; path = views/EmptyStateView.swift; sourceTree = SOURCE_ROOT; };
+		474288652EAF5C3F000940A5 /* mainpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mainpage.swift; path = views/mainpage.swift; sourceTree = SOURCE_ROOT; };
+		474288662EAF5C4D000940A5 /* JournalEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalEditorSheet.swift; path = views/JournalEditorSheet.swift; sourceTree = SOURCE_ROOT; };
 		47A5DB642EA60BA600DB3F68 /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A5DB712EA60BA600DB3F68 /* JournalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A5DB7B2EA60BA600DB3F68 /* JournalAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,16 +58,6 @@
 		47A5DB7E2EA60BA600DB3F68 /* JournalAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = JournalAppUITests;
-			sourceTree = "<group>";
-		};
-		47A5DBDA2EA76AD900DB3F68 /* viewmodels */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = viewmodels;
-			sourceTree = "<group>";
-		};
-		47A5DBDC2EA76AF000DB3F68 /* model */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -82,15 +87,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4742885F2EAF5BCB000940A5 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				474288622EAF5C08000940A5 /* JournalStore.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		474288602EAF5BD5000940A5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				474288662EAF5C4D000940A5 /* JournalEditorSheet.swift */,
+				474288652EAF5C3F000940A5 /* mainpage.swift */,
+				474288642EAF5C31000940A5 /* EmptyStateView.swift */,
+				474288632EAF5C21000940A5 /* ContentView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		47A5DB5B2EA60BA600DB3F68 = {
 			isa = PBXGroup;
 			children = (
+				474288602EAF5BD5000940A5 /* views */,
+				4742885F2EAF5BCB000940A5 /* viewmodel */,
+				47D2B3F82EAF5B9D0037BAF0 /* model */,
 				47A5DB662EA60BA600DB3F68 /* App */,
 				47A5DB742EA60BA600DB3F68 /* JournalAppTests */,
 				47A5DB7E2EA60BA600DB3F68 /* JournalAppUITests */,
 				47A5DB652EA60BA600DB3F68 /* Products */,
-				47A5DBDA2EA76AD900DB3F68 /* viewmodels */,
-				47A5DBDC2EA76AF000DB3F68 /* model */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +127,14 @@
 				47A5DB7B2EA60BA600DB3F68 /* JournalAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		47D2B3F82EAF5B9D0037BAF0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				474288612EAF5BF5000940A5 /* JournalEntry.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,8 +154,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				47A5DB662EA60BA600DB3F68 /* App */,
-				47A5DBDA2EA76AD900DB3F68 /* viewmodels */,
-				47A5DBDC2EA76AF000DB3F68 /* model */,
 			);
 			name = JournalApp;
 			packageProductDependencies = (
@@ -250,6 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4742886B2EAF5D1A000940A5 /* JournalEditorSheet.swift in Sources */,
+				474288672EAF5CBB000940A5 /* JournalStore.swift in Sources */,
+				474288692EAF5D10000940A5 /* EmptyStateView.swift in Sources */,
+				4742886A2EAF5D15000940A5 /* mainpage.swift in Sources */,
+				476444342EAF5F9D001483F0 /* JournalEntry.swift in Sources */,
+				474288682EAF5CC4000940A5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

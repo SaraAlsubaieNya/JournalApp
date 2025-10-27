@@ -3,8 +3,8 @@ import SwiftUI
 import Combine
 
 @MainActor
-final class JournalStore: SwiftUI.ObservableObject {
-    @SwiftUI.Published private(set) var entries: [JournalEntry] = []
+final class JournalStore: ObservableObject {
+    @Published private(set) var entries: [JournalEntry] = []
 
     var isEmpty: Bool { entries.isEmpty }
 

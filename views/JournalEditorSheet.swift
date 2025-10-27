@@ -1,6 +1,17 @@
 import SwiftUI
 
 enum EditorPresentation: Identifiable, Equatable {
+    static func == (lhs: EditorPresentation, rhs: EditorPresentation) -> Bool {
+        switch (lhs, rhs) {
+        case (.new, .new):
+            return true
+        case let (.edit(a), .edit(b)):
+            return a == b
+        default:
+            return false
+        }
+    }
+    
     case new
     case edit(JournalEntry)
 
