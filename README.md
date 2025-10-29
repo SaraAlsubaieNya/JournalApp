@@ -5,4 +5,7 @@ here the user can create new entries, edit ones, or even delete an entry also th
 ## technologies used
 -swift and only swift! 
 -a lil bit of gen AI help was used later in the project 
-
+## architecture 
+MVVM - see branch mvvm for details 
+## contact info
+for more infor contact me on saralsubaieph@gmail.com
